@@ -1,0 +1,10 @@
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\bin\Debug\BilgiGirisUygulamasi.exe.config
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\bin\Debug\BilgiGirisUygulamasi.exe
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\bin\Debug\BilgiGirisUygulamasi.pdb
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.csprojAssemblyReference.cache
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.frm_bilgiGirisUygulamasi.resources
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.Properties.Resources.resources
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.csproj.GenerateResource.cache
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.csproj.CoreCompileInputs.cache
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.exe
+D:\Belgeler\Projeler\Yazilim_Projeleri\BilgiGirisUygulamasi\BilgiGirisUygulamasi\obj\Debug\BilgiGirisUygulamasi.pdb

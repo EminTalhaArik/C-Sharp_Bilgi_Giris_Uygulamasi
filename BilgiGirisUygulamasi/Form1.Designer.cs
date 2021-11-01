@@ -30,27 +30,27 @@ namespace BilgiGirisUygulamasi
         private void InitializeComponent()
         {
             this.gbx_bilgiGiris = new System.Windows.Forms.GroupBox();
-            this.gbx_bilgiIslemler = new System.Windows.Forms.GroupBox();
-            this.gbx_veriler = new System.Windows.Forms.GroupBox();
-            this.lbl_studentCount = new System.Windows.Forms.Label();
-            this.tbx_tcNo = new System.Windows.Forms.TextBox();
-            this.lbl_tcNo = new System.Windows.Forms.Label();
-            this.lbl_ad = new System.Windows.Forms.Label();
-            this.tbx_ad = new System.Windows.Forms.TextBox();
+            this.btn_ekleVeGuncelle = new System.Windows.Forms.Button();
+            this.cbx_sinif = new System.Windows.Forms.ComboBox();
+            this.lbl_sinif = new System.Windows.Forms.Label();
             this.lbl_soyad = new System.Windows.Forms.Label();
             this.tbx_soyad = new System.Windows.Forms.TextBox();
-            this.lbl_sinif = new System.Windows.Forms.Label();
-            this.cbx_sinif = new System.Windows.Forms.ComboBox();
-            this.btn_ekleVeGuncelle = new System.Windows.Forms.Button();
-            this.tbx_bul = new System.Windows.Forms.TextBox();
-            this.btn_sil = new System.Windows.Forms.Button();
-            this.btn_bul = new System.Windows.Forms.Button();
-            this.rbtn_tcNo = new System.Windows.Forms.RadioButton();
-            this.rbtn_adVeSoyad = new System.Windows.Forms.RadioButton();
+            this.lbl_ad = new System.Windows.Forms.Label();
+            this.tbx_ad = new System.Windows.Forms.TextBox();
+            this.lbl_tcNo = new System.Windows.Forms.Label();
+            this.tbx_tcNo = new System.Windows.Forms.TextBox();
+            this.gbx_bilgiIslemler = new System.Windows.Forms.GroupBox();
             this.btn_degistir = new System.Windows.Forms.Button();
-            this.lbx_tcNo = new System.Windows.Forms.ListBox();
-            this.lbx_adVeSoyad = new System.Windows.Forms.ListBox();
+            this.rbtn_adVeSoyad = new System.Windows.Forms.RadioButton();
+            this.rbtn_tcNo = new System.Windows.Forms.RadioButton();
+            this.btn_bul = new System.Windows.Forms.Button();
+            this.btn_sil = new System.Windows.Forms.Button();
+            this.tbx_bul = new System.Windows.Forms.TextBox();
+            this.gbx_veriler = new System.Windows.Forms.GroupBox();
             this.lbx_sinif = new System.Windows.Forms.ListBox();
+            this.lbx_adVeSoyad = new System.Windows.Forms.ListBox();
+            this.lbx_tcNo = new System.Windows.Forms.ListBox();
+            this.lbl_studentCount = new System.Windows.Forms.Label();
             this.gbx_bilgiGiris.SuspendLayout();
             this.gbx_bilgiIslemler.SuspendLayout();
             this.gbx_veriler.SuspendLayout();
@@ -74,73 +74,33 @@ namespace BilgiGirisUygulamasi
             this.gbx_bilgiGiris.TabStop = false;
             this.gbx_bilgiGiris.Text = "Giriş";
             // 
-            // gbx_bilgiIslemler
+            // btn_ekleVeGuncelle
             // 
-            this.gbx_bilgiIslemler.Controls.Add(this.btn_degistir);
-            this.gbx_bilgiIslemler.Controls.Add(this.rbtn_adVeSoyad);
-            this.gbx_bilgiIslemler.Controls.Add(this.rbtn_tcNo);
-            this.gbx_bilgiIslemler.Controls.Add(this.btn_bul);
-            this.gbx_bilgiIslemler.Controls.Add(this.btn_sil);
-            this.gbx_bilgiIslemler.Controls.Add(this.tbx_bul);
-            this.gbx_bilgiIslemler.Location = new System.Drawing.Point(349, 12);
-            this.gbx_bilgiIslemler.Name = "gbx_bilgiIslemler";
-            this.gbx_bilgiIslemler.Size = new System.Drawing.Size(378, 329);
-            this.gbx_bilgiIslemler.TabIndex = 1;
-            this.gbx_bilgiIslemler.TabStop = false;
-            this.gbx_bilgiIslemler.Text = "İşlemler";
+            this.btn_ekleVeGuncelle.Location = new System.Drawing.Point(45, 212);
+            this.btn_ekleVeGuncelle.Name = "btn_ekleVeGuncelle";
+            this.btn_ekleVeGuncelle.Size = new System.Drawing.Size(233, 55);
+            this.btn_ekleVeGuncelle.TabIndex = 11;
+            this.btn_ekleVeGuncelle.Text = "Ekle";
+            this.btn_ekleVeGuncelle.UseVisualStyleBackColor = true;
+            this.btn_ekleVeGuncelle.Click += new System.EventHandler(this.btn_ekleVeGuncelle_Click);
             // 
-            // gbx_veriler
+            // cbx_sinif
             // 
-            this.gbx_veriler.Controls.Add(this.lbx_sinif);
-            this.gbx_veriler.Controls.Add(this.lbx_adVeSoyad);
-            this.gbx_veriler.Controls.Add(this.lbx_tcNo);
-            this.gbx_veriler.Location = new System.Drawing.Point(12, 347);
-            this.gbx_veriler.Name = "gbx_veriler";
-            this.gbx_veriler.Size = new System.Drawing.Size(715, 329);
-            this.gbx_veriler.TabIndex = 2;
-            this.gbx_veriler.TabStop = false;
-            this.gbx_veriler.Text = "Veriler";
+            this.cbx_sinif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_sinif.FormattingEnabled = true;
+            this.cbx_sinif.Location = new System.Drawing.Point(112, 159);
+            this.cbx_sinif.Name = "cbx_sinif";
+            this.cbx_sinif.Size = new System.Drawing.Size(120, 24);
+            this.cbx_sinif.TabIndex = 10;
             // 
-            // lbl_studentCount
+            // lbl_sinif
             // 
-            this.lbl_studentCount.AutoSize = true;
-            this.lbl_studentCount.Location = new System.Drawing.Point(15, 693);
-            this.lbl_studentCount.Name = "lbl_studentCount";
-            this.lbl_studentCount.Size = new System.Drawing.Size(119, 17);
-            this.lbl_studentCount.TabIndex = 3;
-            this.lbl_studentCount.Text = "Öğrenci Sayısı : 0";
-            // 
-            // tbx_tcNo
-            // 
-            this.tbx_tcNo.Location = new System.Drawing.Point(112, 35);
-            this.tbx_tcNo.Name = "tbx_tcNo";
-            this.tbx_tcNo.Size = new System.Drawing.Size(166, 22);
-            this.tbx_tcNo.TabIndex = 4;
-            // 
-            // lbl_tcNo
-            // 
-            this.lbl_tcNo.AutoSize = true;
-            this.lbl_tcNo.Location = new System.Drawing.Point(42, 38);
-            this.lbl_tcNo.Name = "lbl_tcNo";
-            this.lbl_tcNo.Size = new System.Drawing.Size(60, 17);
-            this.lbl_tcNo.TabIndex = 4;
-            this.lbl_tcNo.Text = "TC No : ";
-            // 
-            // lbl_ad
-            // 
-            this.lbl_ad.AutoSize = true;
-            this.lbl_ad.Location = new System.Drawing.Point(65, 79);
-            this.lbl_ad.Name = "lbl_ad";
-            this.lbl_ad.Size = new System.Drawing.Size(37, 17);
-            this.lbl_ad.TabIndex = 5;
-            this.lbl_ad.Text = "Ad : ";
-            // 
-            // tbx_ad
-            // 
-            this.tbx_ad.Location = new System.Drawing.Point(112, 76);
-            this.tbx_ad.Name = "tbx_ad";
-            this.tbx_ad.Size = new System.Drawing.Size(166, 22);
-            this.tbx_ad.TabIndex = 6;
+            this.lbl_sinif.AutoSize = true;
+            this.lbl_sinif.Location = new System.Drawing.Point(55, 162);
+            this.lbl_sinif.Name = "lbl_sinif";
+            this.lbl_sinif.Size = new System.Drawing.Size(47, 17);
+            this.lbl_sinif.TabIndex = 9;
+            this.lbl_sinif.Text = "Sınıf : ";
             // 
             // lbl_soyad
             // 
@@ -158,31 +118,107 @@ namespace BilgiGirisUygulamasi
             this.tbx_soyad.Size = new System.Drawing.Size(166, 22);
             this.tbx_soyad.TabIndex = 8;
             // 
-            // lbl_sinif
+            // lbl_ad
             // 
-            this.lbl_sinif.AutoSize = true;
-            this.lbl_sinif.Location = new System.Drawing.Point(55, 162);
-            this.lbl_sinif.Name = "lbl_sinif";
-            this.lbl_sinif.Size = new System.Drawing.Size(47, 17);
-            this.lbl_sinif.TabIndex = 9;
-            this.lbl_sinif.Text = "Sınıf : ";
+            this.lbl_ad.AutoSize = true;
+            this.lbl_ad.Location = new System.Drawing.Point(65, 79);
+            this.lbl_ad.Name = "lbl_ad";
+            this.lbl_ad.Size = new System.Drawing.Size(37, 17);
+            this.lbl_ad.TabIndex = 5;
+            this.lbl_ad.Text = "Ad : ";
             // 
-            // cbx_sinif
+            // tbx_ad
             // 
-            this.cbx_sinif.FormattingEnabled = true;
-            this.cbx_sinif.Location = new System.Drawing.Point(112, 159);
-            this.cbx_sinif.Name = "cbx_sinif";
-            this.cbx_sinif.Size = new System.Drawing.Size(120, 24);
-            this.cbx_sinif.TabIndex = 10;
+            this.tbx_ad.Location = new System.Drawing.Point(112, 76);
+            this.tbx_ad.Name = "tbx_ad";
+            this.tbx_ad.Size = new System.Drawing.Size(166, 22);
+            this.tbx_ad.TabIndex = 6;
             // 
-            // btn_ekleVeGuncelle
+            // lbl_tcNo
             // 
-            this.btn_ekleVeGuncelle.Location = new System.Drawing.Point(45, 212);
-            this.btn_ekleVeGuncelle.Name = "btn_ekleVeGuncelle";
-            this.btn_ekleVeGuncelle.Size = new System.Drawing.Size(233, 55);
-            this.btn_ekleVeGuncelle.TabIndex = 11;
-            this.btn_ekleVeGuncelle.Text = "Ekle";
-            this.btn_ekleVeGuncelle.UseVisualStyleBackColor = true;
+            this.lbl_tcNo.AutoSize = true;
+            this.lbl_tcNo.Location = new System.Drawing.Point(42, 38);
+            this.lbl_tcNo.Name = "lbl_tcNo";
+            this.lbl_tcNo.Size = new System.Drawing.Size(60, 17);
+            this.lbl_tcNo.TabIndex = 4;
+            this.lbl_tcNo.Text = "TC No : ";
+            // 
+            // tbx_tcNo
+            // 
+            this.tbx_tcNo.Location = new System.Drawing.Point(112, 35);
+            this.tbx_tcNo.MaxLength = 11;
+            this.tbx_tcNo.Name = "tbx_tcNo";
+            this.tbx_tcNo.Size = new System.Drawing.Size(166, 22);
+            this.tbx_tcNo.TabIndex = 4;
+            // 
+            // gbx_bilgiIslemler
+            // 
+            this.gbx_bilgiIslemler.Controls.Add(this.btn_degistir);
+            this.gbx_bilgiIslemler.Controls.Add(this.rbtn_adVeSoyad);
+            this.gbx_bilgiIslemler.Controls.Add(this.rbtn_tcNo);
+            this.gbx_bilgiIslemler.Controls.Add(this.btn_bul);
+            this.gbx_bilgiIslemler.Controls.Add(this.btn_sil);
+            this.gbx_bilgiIslemler.Controls.Add(this.tbx_bul);
+            this.gbx_bilgiIslemler.Location = new System.Drawing.Point(349, 12);
+            this.gbx_bilgiIslemler.Name = "gbx_bilgiIslemler";
+            this.gbx_bilgiIslemler.Size = new System.Drawing.Size(378, 329);
+            this.gbx_bilgiIslemler.TabIndex = 1;
+            this.gbx_bilgiIslemler.TabStop = false;
+            this.gbx_bilgiIslemler.Text = "İşlemler";
+            // 
+            // btn_degistir
+            // 
+            this.btn_degistir.Enabled = false;
+            this.btn_degistir.Location = new System.Drawing.Point(78, 269);
+            this.btn_degistir.Name = "btn_degistir";
+            this.btn_degistir.Size = new System.Drawing.Size(233, 37);
+            this.btn_degistir.TabIndex = 24;
+            this.btn_degistir.Text = "Değiştir";
+            this.btn_degistir.UseVisualStyleBackColor = true;
+            this.btn_degistir.Click += new System.EventHandler(this.btn_degistir_Click);
+            // 
+            // rbtn_adVeSoyad
+            // 
+            this.rbtn_adVeSoyad.AutoSize = true;
+            this.rbtn_adVeSoyad.Location = new System.Drawing.Point(188, 77);
+            this.rbtn_adVeSoyad.Name = "rbtn_adVeSoyad";
+            this.rbtn_adVeSoyad.Size = new System.Drawing.Size(109, 21);
+            this.rbtn_adVeSoyad.TabIndex = 23;
+            this.rbtn_adVeSoyad.Text = "Ad ve Soyad";
+            this.rbtn_adVeSoyad.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_tcNo
+            // 
+            this.rbtn_tcNo.AutoSize = true;
+            this.rbtn_tcNo.Checked = true;
+            this.rbtn_tcNo.Location = new System.Drawing.Point(96, 75);
+            this.rbtn_tcNo.Name = "rbtn_tcNo";
+            this.rbtn_tcNo.Size = new System.Drawing.Size(69, 21);
+            this.rbtn_tcNo.TabIndex = 22;
+            this.rbtn_tcNo.TabStop = true;
+            this.rbtn_tcNo.Text = "TC No";
+            this.rbtn_tcNo.UseVisualStyleBackColor = true;
+            // 
+            // btn_bul
+            // 
+            this.btn_bul.Location = new System.Drawing.Point(78, 183);
+            this.btn_bul.Name = "btn_bul";
+            this.btn_bul.Size = new System.Drawing.Size(233, 37);
+            this.btn_bul.TabIndex = 20;
+            this.btn_bul.Text = "Bul";
+            this.btn_bul.UseVisualStyleBackColor = true;
+            this.btn_bul.Click += new System.EventHandler(this.btn_bul_Click);
+            // 
+            // btn_sil
+            // 
+            this.btn_sil.Enabled = false;
+            this.btn_sil.Location = new System.Drawing.Point(78, 226);
+            this.btn_sil.Name = "btn_sil";
+            this.btn_sil.Size = new System.Drawing.Size(233, 37);
+            this.btn_sil.TabIndex = 12;
+            this.btn_sil.Text = "Sil";
+            this.btn_sil.UseVisualStyleBackColor = true;
+            this.btn_sil.Click += new System.EventHandler(this.btn_sil_Click);
             // 
             // tbx_bul
             // 
@@ -192,63 +228,26 @@ namespace BilgiGirisUygulamasi
             this.tbx_bul.Size = new System.Drawing.Size(201, 27);
             this.tbx_bul.TabIndex = 13;
             // 
-            // btn_sil
+            // gbx_veriler
             // 
-            this.btn_sil.Location = new System.Drawing.Point(78, 183);
-            this.btn_sil.Name = "btn_sil";
-            this.btn_sil.Size = new System.Drawing.Size(233, 37);
-            this.btn_sil.TabIndex = 12;
-            this.btn_sil.Text = "Sil";
-            this.btn_sil.UseVisualStyleBackColor = true;
+            this.gbx_veriler.Controls.Add(this.lbx_sinif);
+            this.gbx_veriler.Controls.Add(this.lbx_adVeSoyad);
+            this.gbx_veriler.Controls.Add(this.lbx_tcNo);
+            this.gbx_veriler.Location = new System.Drawing.Point(12, 347);
+            this.gbx_veriler.Name = "gbx_veriler";
+            this.gbx_veriler.Size = new System.Drawing.Size(715, 329);
+            this.gbx_veriler.TabIndex = 2;
+            this.gbx_veriler.TabStop = false;
+            this.gbx_veriler.Text = "Veriler";
             // 
-            // btn_bul
+            // lbx_sinif
             // 
-            this.btn_bul.Location = new System.Drawing.Point(78, 226);
-            this.btn_bul.Name = "btn_bul";
-            this.btn_bul.Size = new System.Drawing.Size(233, 37);
-            this.btn_bul.TabIndex = 20;
-            this.btn_bul.Text = "Bul";
-            this.btn_bul.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_tcNo
-            // 
-            this.rbtn_tcNo.AutoSize = true;
-            this.rbtn_tcNo.Location = new System.Drawing.Point(96, 75);
-            this.rbtn_tcNo.Name = "rbtn_tcNo";
-            this.rbtn_tcNo.Size = new System.Drawing.Size(69, 21);
-            this.rbtn_tcNo.TabIndex = 22;
-            this.rbtn_tcNo.TabStop = true;
-            this.rbtn_tcNo.Text = "TC No";
-            this.rbtn_tcNo.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_adVeSoyad
-            // 
-            this.rbtn_adVeSoyad.AutoSize = true;
-            this.rbtn_adVeSoyad.Location = new System.Drawing.Point(188, 77);
-            this.rbtn_adVeSoyad.Name = "rbtn_adVeSoyad";
-            this.rbtn_adVeSoyad.Size = new System.Drawing.Size(109, 21);
-            this.rbtn_adVeSoyad.TabIndex = 23;
-            this.rbtn_adVeSoyad.TabStop = true;
-            this.rbtn_adVeSoyad.Text = "Ad ve Soyad";
-            this.rbtn_adVeSoyad.UseVisualStyleBackColor = true;
-            // 
-            // btn_degistir
-            // 
-            this.btn_degistir.Location = new System.Drawing.Point(78, 269);
-            this.btn_degistir.Name = "btn_degistir";
-            this.btn_degistir.Size = new System.Drawing.Size(233, 37);
-            this.btn_degistir.TabIndex = 24;
-            this.btn_degistir.Text = "Değiştir";
-            this.btn_degistir.UseVisualStyleBackColor = true;
-            // 
-            // lbx_tcNo
-            // 
-            this.lbx_tcNo.FormattingEnabled = true;
-            this.lbx_tcNo.ItemHeight = 16;
-            this.lbx_tcNo.Location = new System.Drawing.Point(12, 21);
-            this.lbx_tcNo.Name = "lbx_tcNo";
-            this.lbx_tcNo.Size = new System.Drawing.Size(226, 292);
-            this.lbx_tcNo.TabIndex = 25;
+            this.lbx_sinif.FormattingEnabled = true;
+            this.lbx_sinif.ItemHeight = 16;
+            this.lbx_sinif.Location = new System.Drawing.Point(476, 21);
+            this.lbx_sinif.Name = "lbx_sinif";
+            this.lbx_sinif.Size = new System.Drawing.Size(226, 292);
+            this.lbx_sinif.TabIndex = 27;
             // 
             // lbx_adVeSoyad
             // 
@@ -259,14 +258,23 @@ namespace BilgiGirisUygulamasi
             this.lbx_adVeSoyad.Size = new System.Drawing.Size(226, 292);
             this.lbx_adVeSoyad.TabIndex = 26;
             // 
-            // lbx_sinif
+            // lbx_tcNo
             // 
-            this.lbx_sinif.FormattingEnabled = true;
-            this.lbx_sinif.ItemHeight = 16;
-            this.lbx_sinif.Location = new System.Drawing.Point(476, 21);
-            this.lbx_sinif.Name = "lbx_sinif";
-            this.lbx_sinif.Size = new System.Drawing.Size(226, 292);
-            this.lbx_sinif.TabIndex = 27;
+            this.lbx_tcNo.FormattingEnabled = true;
+            this.lbx_tcNo.ItemHeight = 16;
+            this.lbx_tcNo.Location = new System.Drawing.Point(12, 21);
+            this.lbx_tcNo.Name = "lbx_tcNo";
+            this.lbx_tcNo.Size = new System.Drawing.Size(226, 292);
+            this.lbx_tcNo.TabIndex = 25;
+            // 
+            // lbl_studentCount
+            // 
+            this.lbl_studentCount.AutoSize = true;
+            this.lbl_studentCount.Location = new System.Drawing.Point(15, 693);
+            this.lbl_studentCount.Name = "lbl_studentCount";
+            this.lbl_studentCount.Size = new System.Drawing.Size(119, 17);
+            this.lbl_studentCount.TabIndex = 3;
+            this.lbl_studentCount.Text = "Öğrenci Sayısı : 0";
             // 
             // frm_bilgiGirisUygulamasi
             // 
@@ -278,8 +286,10 @@ namespace BilgiGirisUygulamasi
             this.Controls.Add(this.gbx_veriler);
             this.Controls.Add(this.gbx_bilgiIslemler);
             this.Controls.Add(this.gbx_bilgiGiris);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_bilgiGirisUygulamasi";
             this.Text = "Bilgi Giriş Uygulaması";
+            this.Load += new System.EventHandler(this.frm_bilgiGirisUygulamasi_Load);
             this.gbx_bilgiGiris.ResumeLayout(false);
             this.gbx_bilgiGiris.PerformLayout();
             this.gbx_bilgiIslemler.ResumeLayout(false);
