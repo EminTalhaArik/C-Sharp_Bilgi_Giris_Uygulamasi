@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BilgiGirisUygulamasi
 {
-    public partial class Form1 : Form
+    public partial class frm_bilgiGirisUygulamasi : Form
     {
-        public Form1()
+        public frm_bilgiGirisUygulamasi()
         {
             InitializeComponent();
         }
