@@ -25,6 +25,58 @@ namespace BilgiGirisUygulamasi
             TemelBaslangic();
         }
 
+        #region Kontroller
+        private bool TcNoKontrol(string tcNo)
+        {
+            try
+            {
+                tcNo = Convert.ToInt64(tcNo).ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lütfen Geçerli bir tc kimlik numarası giriniz..");
+                return false;
+            }
+
+            if (tcNo.Length == 11)
+            {
+                if (Convert.ToInt64(tcNo) % 2 == 0)
+                {
+                    foreach (var item in ogrenciler)
+                    {
+                        if (tcNo == item.tcNo)
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private bool OgrenciKontrol(Ogrenci ogrenci)
+        {
+            if (ogrenci.ad != "" && ogrenci.soyad != "" && TcNoKontrol(ogrenci.tcNo) && ogrenci.sinif != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Veriler
         private void VeriEkle(Ogrenci ogrenci)
         {
             if (OgrenciKontrol(ogrenci))
@@ -35,31 +87,6 @@ namespace BilgiGirisUygulamasi
             {
                 MessageBox.Show("Girdiğiniz veriler hatalıdır..");
             }
-        }
-
-        private void ListeleriYenile()
-        {
-            ListeleriTemizle();
-            foreach (var item in ogrenciler)
-            {
-                lbx_tcNo.Items.Add(item.tcNo);
-                lbx_adVeSoyad.Items.Add(item.ad + " " + item.soyad);
-                lbx_sinif.Items.Add(item.sinif);
-            }
-
-            lbl_studentCount.Text = "Öğrenci Sayısı : " + ogrenciler.Count;
-        }
-
-        private void ListeleriTemizle()
-        {
-            tbx_ad.Text = "";
-            tbx_soyad.Text = "";
-            tbx_tcNo.Text = "";
-            cbx_sinif.Text = "9. Sınıf";
-            lbx_tcNo.Items.Clear();
-            lbx_adVeSoyad.Items.Clear();
-            lbx_sinif.Items.Clear();
-            selectedOgrenci = null;
         }
 
         private void OgrenciBulTC(string tc)
@@ -107,17 +134,10 @@ namespace BilgiGirisUygulamasi
             }
         }
 
-        private int ListedenIndexBul()
+        private void OgrenciSec(Ogrenci ogrenci)
         {
-            int index = 0;
-            foreach (var item in ogrenciler)
-            {
-                if (item == selectedOgrenci)
-                    return index;
-                index++;
-            }
-
-            return -5;
+            if (ogrenci != null)
+                selectedOgrenci = ogrenci;
         }
 
         private void OgrenciGuncelle(Ogrenci yeniOgrenci)
@@ -132,96 +152,6 @@ namespace BilgiGirisUygulamasi
                 }
 
                 ListeleriYenile();
-            }
-        }
-
-        private bool OgrenciKontrol(Ogrenci ogrenci)
-        {
-            if (ogrenci.ad != "" && ogrenci.soyad != "" && TcNoKontrol(ogrenci.tcNo) && ogrenci.sinif != "")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void OgrenciSec(Ogrenci ogrenci)
-        {
-            if (ogrenci != null)
-                selectedOgrenci = ogrenci;
-        }
-
-        private bool TcNoKontrol(string tcNo)
-        {
-            try
-            {
-                tcNo = Convert.ToInt64(tcNo).ToString();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Lütfen Geçerli bir tc kimlik numarası giriniz..");
-                return false;
-            }
-
-            if (tcNo.Length == 11)
-            {
-                if (Convert.ToInt64(tcNo) % 2 == 0)
-                {
-                    foreach (var item in ogrenciler)
-                    {
-                        if (tcNo == item.tcNo)
-                        {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void TemelBaslangic()
-        {
-            cbx_sinif.Items.Add("9. Sınıf");
-            cbx_sinif.Items.Add("10. Sınıf");
-            cbx_sinif.Items.Add("11. Sınıf");
-            cbx_sinif.Items.Add("12. Sınıf");
-
-            cbx_sinif.Text = "9. Sınıf";
-        }
-
-
-        private void btn_ekleVeGuncelle_Click(object sender, EventArgs e)
-        {
-            VeriEkle(new Ogrenci(tbx_tcNo.Text, tbx_ad.Text, tbx_soyad.Text, cbx_sinif.Text));
-            ListeleriYenile();
-        }
-
-        private void btn_bul_Click(object sender, EventArgs e)
-        {
-            if (tbx_bul.Text.Trim() != "")
-            {
-                if (rbtn_adVeSoyad.CanSelect)
-                {
-                    OgrenciBulIsim(tbx_bul.Text);
-                }
-
-                if (rbtn_tcNo.CanSelect)
-                {
-                    OgrenciBulTC(tbx_bul.Text);
-                }
-
-                ButonlariGuncelle("true");
             }
         }
 
@@ -244,6 +174,9 @@ namespace BilgiGirisUygulamasi
 
         }
 
+        #endregion
+
+        #region Butonlar
         private void btn_sil_Click(object sender, EventArgs e)
         {
             OgrenciSil();
@@ -256,6 +189,79 @@ namespace BilgiGirisUygulamasi
             OgrenciGuncelle(new Ogrenci(tbx_tcNo.Text, tbx_ad.Text, tbx_soyad.Text, cbx_sinif.Text));
             ButonlariGuncelle("false");
         }
+
+        private void btn_bul_Click(object sender, EventArgs e)
+        {
+            if (tbx_bul.Text.Trim() != "")
+            {
+                if (rbtn_adVeSoyad.CanSelect)
+                {
+                    OgrenciBulIsim(tbx_bul.Text);
+                }
+
+                if (rbtn_tcNo.CanSelect)
+                {
+                    OgrenciBulTC(tbx_bul.Text);
+                }
+
+                ButonlariGuncelle("true");
+            }
+        }
+
+        private void btn_ekleVeGuncelle_Click(object sender, EventArgs e)
+        {
+            VeriEkle(new Ogrenci(tbx_tcNo.Text, tbx_ad.Text, tbx_soyad.Text, cbx_sinif.Text));
+            ListeleriYenile();
+        }
+
+        #endregion
+
+        #region TemelKodlar
+        private void TemelBaslangic()
+        {
+            cbx_sinif.Items.Add("9. Sınıf");
+            cbx_sinif.Items.Add("10. Sınıf");
+            cbx_sinif.Items.Add("11. Sınıf");
+            cbx_sinif.Items.Add("12. Sınıf");
+
+            cbx_sinif.Text = "9. Sınıf";
+        }
+        private int ListedenIndexBul()
+        {
+            int index = 0;
+            foreach (var item in ogrenciler)
+            {
+                if (item == selectedOgrenci)
+                    return index;
+                index++;
+            }
+
+            return -5;
+        }
+        private void ListeleriTemizle()
+        {
+            tbx_ad.Text = "";
+            tbx_soyad.Text = "";
+            tbx_tcNo.Text = "";
+            cbx_sinif.Text = "9. Sınıf";
+            lbx_tcNo.Items.Clear();
+            lbx_adVeSoyad.Items.Clear();
+            lbx_sinif.Items.Clear();
+            selectedOgrenci = null;
+        }
+        private void ListeleriYenile()
+        {
+            ListeleriTemizle();
+            foreach (var item in ogrenciler)
+            {
+                lbx_tcNo.Items.Add(item.tcNo);
+                lbx_adVeSoyad.Items.Add(item.ad + " " + item.soyad);
+                lbx_sinif.Items.Add(item.sinif);
+            }
+
+            lbl_studentCount.Text = "Öğrenci Sayısı : " + ogrenciler.Count;
+        }
+        #endregion
     }
 
     public class Ogrenci
